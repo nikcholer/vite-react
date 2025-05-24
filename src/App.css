@@ -3,6 +3,83 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: linear-gradient(135deg, #fffbe7 0%, #ffe3ec 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.barry-welcome {
+  background: #fff9f2;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px 0 #fde5b4a0;
+  margin: 3rem auto;
+  max-width: 420px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barry-welcome h1 {
+  color: #ea8c2e;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.barry-date {
+  color: #7a5c1e;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.barry-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.barry-link {
+  display: inline-block;
+  background: #ffe7b2;
+  color: #ea8c2e;
+  text-decoration: none;
+  padding: 0.7em 1.3em;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px #fbe8c3a0;
+}
+.barry-link:hover {
+  background: #ffd591;
+  color: #b55c00;
+}
+
+.barry-mail-btn {
+  background: #ffb4d3;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+  margin-bottom: 1.3rem;
+  box-shadow: 0 2px 8px #fbc3e3a0;
+  transition: background 0.2s, color 0.2s;
+}
+.barry-mail-btn:hover {
+  background: #ff7eb7;
+  color: #fffbe7;
+}
+
+.barry-message {
+  color: #ea8c2e;
+  font-size: 1.3rem;
+  margin-top: 0.8rem;
+  font-weight: 500;
 }
 
 .logo {

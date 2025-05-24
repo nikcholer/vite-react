@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Get current time and date
+  const now = new Date();
+  // Local time offset for BST (+1)
+  const localNow = new Date(now.getTime() + (now.getTimezoneOffset() + 60) * 60000);
+  const hours = localNow.getHours();
+  let greeting = "Good Morning";
+  if (hours >= 12 && hours < 18) greeting = "Good Afternoon";
+  else if (hours >= 18 || hours < 5) greeting = "Good Evening";
+
+  // Format date as Friday 3 May 2025
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const dayName = days[localNow.getDay()];
+  const dayNum = localNow.getDate();
+  const month = months[localNow.getMonth()];
+  const year = localNow.getFullYear();
+  const formattedDate = `${dayName} ${dayNum} ${month} ${year}`;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="barry-welcome">
+      <h1>{greeting}, Barry!</h1>
+      <p className="barry-date">Today is {formattedDate}.</p>
+      <div className="barry-links">
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" className="barry-link">🔎 Google</a>
+        <a href="https://www.bbc.co.uk/news" target="_blank" rel="noopener noreferrer" className="barry-link">📰 BBC News</a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <button
+        className="barry-mail-btn"
+        onClick={() => window.location.href = 'mailto:cholerton@gmail.com?subject=Hello Barry!'}
+      >
+        📧 Email cholerton@gmail.com
+      </button>
+      <p className="barry-message">Have a wonderful day! 😊</p>
+    </div>
+  );
 }
 
 export default App
