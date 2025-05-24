@@ -1,1 +1,1 @@
-Nik has been trying to get in touch, please call 020 7123 2345 when you see this!
+We can change the message by updating the motd.txt file in the public directory.
