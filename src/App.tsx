@@ -27,11 +27,18 @@ function App() {
     if (!motdUrl) return;
     fetch(motdUrl)
       .then(response => {
+        console.log('MOTD fetch response:', response);
         if (response.ok) return response.text();
         throw new Error('No MOTD');
       })
-      .then(text => setMotd(text.trim() ? text : null))
-      .catch(() => setMotd(null));
+      .then(text => {
+        console.log('MOTD text:', text);
+        setMotd(text.trim() ? text : null);
+      })
+      .catch(err => {
+        console.error('MOTD fetch error:', err);
+        setMotd(null);
+      });
   }, []);
 
   return (
