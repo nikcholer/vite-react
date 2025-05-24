@@ -23,7 +23,9 @@ function App() {
   const [motd, setMotd] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    fetch('/motd.txt')
+    const motdUrl = import.meta.env.VITE_MOTD_URL;
+    if (!motdUrl) return;
+    fetch(motdUrl)
       .then(response => {
         if (response.ok) return response.text();
         throw new Error('No MOTD');
