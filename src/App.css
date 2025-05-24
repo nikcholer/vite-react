@@ -75,6 +75,19 @@
   color: #fffbe7;
 }
 
+.barry-motd {
+  background: #fff3cd;
+  color: #7a5c1e;
+  border: 2px solid #ffe082;
+  border-radius: 16px;
+  padding: 1.2em 1.3em;
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #ffe082a0;
+  text-align: center;
+}
+
 .barry-message {
   color: #ea8c2e;
   font-size: 1.3rem;

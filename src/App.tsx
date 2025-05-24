@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css'
 
 function App() {
@@ -19,10 +20,27 @@ function App() {
   const year = localNow.getFullYear();
   const formattedDate = `${dayName} ${dayNum} ${month} ${year}`;
 
+  const [motd, setMotd] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    fetch('/motd.txt')
+      .then(response => {
+        if (response.ok) return response.text();
+        throw new Error('No MOTD');
+      })
+      .then(text => setMotd(text.trim() ? text : null))
+      .catch(() => setMotd(null));
+  }, []);
+
   return (
     <div className="barry-welcome">
       <h1>{greeting}, Barry!</h1>
       <p className="barry-date">Today is {formattedDate}.</p>
+      {motd && (
+        <div className="barry-motd">
+          <strong>Message:</strong> {motd}
+        </div>
+      )}
       <div className="barry-links">
         <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" className="barry-link">🔎 Google</a>
         <a href="https://www.bbc.co.uk/news" target="_blank" rel="noopener noreferrer" className="barry-link">📰 BBC News</a>
