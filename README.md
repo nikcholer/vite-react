@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+Need to update this for the app we're building, not the template!
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 While this project uses React, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
