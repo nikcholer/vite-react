@@ -1,1 +1,1 @@
-We can change the message by updating the motd.txt file in the public directory.
+Test message of the day, updated Sunday 0530
